@@ -8,4 +8,4 @@ COPY src/main/liberty/config/server.xml /config
 
 COPY target/*.war /config/apps/system.war
 
-RUN sudo chown -R 1001:0 /config
+RUN chown -R 1001:0 /config
