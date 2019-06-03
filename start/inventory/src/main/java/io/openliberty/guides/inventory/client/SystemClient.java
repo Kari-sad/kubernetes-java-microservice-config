@@ -1,4 +1,3 @@
-// tag::copyright[]
 /*******************************************************************************
  * Copyright (c) 2017 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -9,7 +8,6 @@
  * Contributors:
  *     IBM Corporation - Initial implementation
  *******************************************************************************/
-// end::copyright[]
 package io.openliberty.guides.inventory.client;
 
 import javax.enterprise.context.RequestScoped;
@@ -47,7 +45,6 @@ public class SystemClient {
     return getPropertiesHelper(clientBuilder);
   }
 
-  // tag::doc[]
   /**
    * Builds the URI string to the system service for a particular host.
    * @param protocol
@@ -60,7 +57,6 @@ public class SystemClient {
    *          - Note that the path needs to start with a slash!!!
    * @return String representation of the URI to the system properties service.
    */
-  // end::doc[]
   protected String buildUrl(String protocol, String host, int port, String path) {
     try {
       URI uri = new URI(protocol, null, host, port, path, null, null);

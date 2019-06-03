@@ -1,4 +1,3 @@
-// tag::copyright[]
 /*******************************************************************************
  * Copyright (c) 2017, 2019 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -9,7 +8,6 @@
  * Contributors:
  *     IBM Corporation - Initial implementation
  *******************************************************************************/
-// end::copyright[]
 package io.openliberty.guides.system;
 
 // CDI
@@ -28,11 +26,9 @@ import org.eclipse.microprofile.config.inject.ConfigProperty;
 @Path("/properties")
 public class SystemResource {
 
-  // tag::appName[]
   @Inject
   @ConfigProperty(name = "APP_NAME")
   private String appName;
-  // end::appName[]
 
   @Inject
   @ConfigProperty(name = "HOSTNAME")
