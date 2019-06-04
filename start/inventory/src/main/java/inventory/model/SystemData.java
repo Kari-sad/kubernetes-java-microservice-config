@@ -8,7 +8,7 @@
  * Contributors:
  *     IBM Corporation - Initial implementation
  *******************************************************************************/
-package io.openliberty.guides.inventory.model;
+package inventory.model;
 
 import java.util.Properties;
 

@@ -1,5 +1,6 @@
+// tag::copyright[]
 /*******************************************************************************
- * Copyright (c) 2017, 2018 IBM Corporation and others.
+ * Copyright (c) 2017 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,23 +9,14 @@
  * Contributors:
  *     IBM Corporation - Initial implementation
  *******************************************************************************/
-package io.openliberty.guides.inventory.model;
+ // end::copyright[]
+package system;
 
-import java.util.List;
+// JAX-RS
+import javax.ws.rs.core.Application;
+import javax.ws.rs.ApplicationPath;
 
-public class InventoryList {
+@ApplicationPath("system")
+public class SystemApplication extends Application {
 
-  private List<SystemData> systems;
-
-  public InventoryList(List<SystemData> systems) {
-    this.systems = systems;
-  }
-
-  public List<SystemData> getSystems() {
-    return systems;
-  }
-
-  public int getTotal() {
-    return systems.size();
-  }
 }

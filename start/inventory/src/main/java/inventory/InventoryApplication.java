@@ -1,4 +1,3 @@
-// tag::copyright[]
 /*******************************************************************************
  * Copyright (c) 2017 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -9,14 +8,13 @@
  * Contributors:
  *     IBM Corporation - Initial implementation
  *******************************************************************************/
- // end::copyright[]
-package io.openliberty.guides.system;
+package inventory;
 
 // JAX-RS
-import javax.ws.rs.core.Application;
 import javax.ws.rs.ApplicationPath;
+import javax.ws.rs.core.Application;
 
-@ApplicationPath("system")
-public class SystemApplication extends Application {
+@ApplicationPath("inventory")
+public class InventoryApplication extends Application {
 
 }

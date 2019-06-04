@@ -8,7 +8,7 @@
  * Contributors:
  *     IBM Corporation - Initial implementation
  *******************************************************************************/
-package io.openliberty.guides.inventory.client;
+package inventory.client;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
