@@ -15,17 +15,16 @@ spec:
     spec:
       containers:
       - name: system-container
-        image: system:1.0-SNAPSHOT
+        image: karinegh18/system:1.0-SNAPSHOT
         ports:
         - containerPort: 9080
-        readinessProbe:
-          httpGet:
-            path: /health/ready
-            port: 9080
-          initialDelaySeconds: 30
-          periodSeconds: 10
-          timeoutSeconds: 3
-          failureThreshold: 1
+        # Set the APP_NAME environment variable
+        env:
+        - name: APP_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: sys-app-name
+              key: name
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -44,17 +43,21 @@ spec:
     spec:
       containers:
       - name: inventory-container
-        image: inventory:1.0-SNAPSHOT
+        image: karinegh18/inventory:1.0-SNAPSHOT
         ports:
         - containerPort: 9080
-        readinessProbe:
-          httpGet:
-            path: /health/ready
-            port: 9080
-          initialDelaySeconds: 30
-          periodSeconds: 10
-          timeoutSeconds: 3
-          failureThreshold: 1
+        # Set the SYSTEM_APP_USERNAME and SYSTEM_APP_PASSWORD environment variables
+        env:
+        - name: SYSTEM_APP_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: sys-app-credentials
+              key: username
+        - name: SYSTEM_APP_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: sys-app-credentials
+              key: password
 ---
 apiVersion: v1
 kind: Service
